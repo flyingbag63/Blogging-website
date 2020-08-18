@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>All Bloggers</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="{% url 'index' %}">Home</a></li>
+		<li> <a href="">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h2>Top Bloggers</h2>
+	<p>All the Bloggers present on the website</p>
+	{% if blogger_list %}
+		<ul>
+			{% for blogger in blogger_list %}
+			<li>
+				<a href="{{ blogger.get_absolute_url }}">{{ blogger }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}

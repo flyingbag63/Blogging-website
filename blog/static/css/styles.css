@@ -1,0 +1,182 @@
+/* || General setup */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: #0F0907;
+}
+
+body {
+  width: 70%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Candara', cursive;
+  color: #CCC5C3;
+}
+
+p, input, li, .pagination, .page-links {
+  font-family: 'Candara', sans-serif;
+  color: #CCC5C3;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 3rem;
+  text-align: left;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li, .pagination, .page-links, input {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+body > * {
+  background-color: red;
+  padding: 1%;
+}
+
+main, header, nav, article, aside, footer, section {
+  background-color: #0F0907;
+  padding: 1%;
+}
+
+h1 {
+  flex: 5;
+  text-transform: uppercase;
+}
+
+header img {
+  display: block;
+  height: 60px;
+  padding-top: 20.15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav {
+  height: 50px;
+  flex: 100%;
+  display: flex;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a, nav span {
+  display: inline-block;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1.7;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #CCC5C3;
+
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article, section {
+  flex: 4;
+}
+
+aside {
+  flex: 1;
+  margin-left: 10px;
+  padding: 3%;
+}
+
+aside a {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+aside img {
+  max-width: 100%;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+#id_comment {
+  margin-bottom: 10px;
+  width: 300px;
+  height: 100px;
+  font-size: 2rem; 
+  text-align: left;
+  background-color: black;
+  color: #CCC5C3;
+}
+
+#id_username {
+  margin-bottom: 10px;
+  width: 200px;
+  height: 40px;
+  font-size: 2rem; 
+  text-align: left;
+  background-color: black;
+  color: #CCC5C3;
+}
+
+#id_password {
+  margin-bottom: 10px;
+  width: 204px;
+  height: 40px;
+  font-size: 2rem; 
+  text-align: left;
+  background-color: black;
+  color: #CCC5C3;
+}
+
+input[type="submit"] {
+  background-color: #CCC5C3; /* Green */
+  border: none;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}

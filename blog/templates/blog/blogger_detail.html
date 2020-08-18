@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>{{ blogger }}</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="{% url 'index' %}">Home</a></li>
+		<li> <a href="{% url 'blogger-list' %}">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h2>{{ blogger }}</h2>
+	<h3>Bio</h3>
+	<p>{{ blogger.bio }}</p>
+
+	<br>
+	<h3>Blogs</h3>
+	<hr>
+	<ul>
+	{% for blog in blogs %}
+		<li><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></li>
+		<hr>
+	{% endfor %}
+	</ul>
+{% endblock %}

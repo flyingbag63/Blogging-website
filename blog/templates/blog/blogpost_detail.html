@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>{{ blogpost.title }}</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="{% url 'index' %}">Home</a></li>
+		<li> <a href="{% url 'blogger-list' %}">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h2>{{ blogpost.title }}</h2>
+	<p><strong>Post Date:</strong> {{ blogpost.date }}</p>
+	<p><strong>Author:</strong> {{ blogpost.author }}</p>
+	<p><strong>Description:</strong></p>
+	<p>{{ blogpost.content }}</p>
+
+	<br>
+	<h3>Comments</h3>
+	<hr>
+	{% for comment in comments %}
+		<p><strong>{{ comment.commentor }}</strong>{{ comment }}</p>
+		<hr>
+	{% endfor %}
+	{% if user.is_authenticated %}
+		<p><a href="{% url 'add-comment' blogpost.id %}">Add comment</a></p>
+	{% else %}
+		<p><a href="{% url 'login'%}?next={{request.path}}">Log in</a></p>
+	{% endif %}
+	
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>Blogging Website Home</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="">Home</a></li>
+		<li> <a href="{% url 'blogger-list' %}">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h2>A new way to write</h2>
+	<p>Welcome to a new blogging website where you can write with your heart. Start writing today to discover more.</p>
+	<p>These are the current stats of the website</p>
+	<ul>
+		<li>Bloggers: {{ total_bloggers }}</li>
+		<li>Blogs: {{ total_blogs }}</li>
+		<li>Users: {{ total_users }}</li>
+		<li>Average Comments Per Blog: {{ averge_comments_per_blog }}</li>
+		<li>Average comments per user: {{ average_comments_per_user }}</li>
+	</ul>
+{% endblock %}

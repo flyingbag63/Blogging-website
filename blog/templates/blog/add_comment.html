@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>Add comment</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="{% url 'index' %}">Home</a></li>
+		<li> <a href="{% url 'blogger-list' %}">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h3>Add comment to <a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h3>
+	<form method="post" action="">
+		{% csrf_token %}
+		<p>{{ form.comment.label_tag }}</p>
+		<p>{{ form.comment }}</p>
+		<input type="submit" value="Post" />
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+{% endblock %}
