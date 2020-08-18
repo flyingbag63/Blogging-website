@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+	<title>Log out</title>
+{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li> <a href="{% url 'index' %}">Home</a></li>
+		<li> <a href="{% url 'blogger-list' %}">Bloggers</a></li>
+		<li> <a href="{% url 'blogs' %}">Blogs</a></li>
+		<li> <a href="">Search</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<h3>Logged out!</h3>  
+	<p><a href="{% url 'login'%}">Login again.</a></p>
+{% endblock %}
